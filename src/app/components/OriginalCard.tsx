@@ -13,7 +13,7 @@ export default function OriginalCard({
 }) {
   return (
     <>
-      <h1>{`${title} - ${artist}`}</h1>
+      <h3>{`${title} - ${artist}`}</h3>
       <iframe
         src={original.youtube}
         title="YouTube video player"
