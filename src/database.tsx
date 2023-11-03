@@ -1,4 +1,18 @@
-const pageData = [
+type pageDataT = {
+  title: string;
+  artist: string;
+  harmonies: {
+    all: string;
+    soprano: string;
+    alto: string;
+    tenor: string;
+  };
+  original: {
+    youtube: string;
+    spotify: string;
+  };
+};
+const pageData: pageDataT[] = [
   {
     title: "Håll mitt hjärta",
     artist: "Björn Skifs",
@@ -27,6 +41,11 @@ const pageData = [
       tenor:
         "https://res.cloudinary.com/dfmck30un/video/upload/v1698527126/stand_still__harmonies/stand_still_tenor_yputmm.mp3",
     },
+    original: {
+      youtube: "https://www.youtube.com/embed/Se6Iv4FwO-E?si=_LN6m61OAJkdA0Xp",
+      spotify:
+        "https://open.spotify.com/track/0jZkU2WcbamGJBkMpWiXpO?si=4bcdf05fc80d4a1d",
+    },
   },
   {
     title: "He will supply",
@@ -38,6 +57,11 @@ const pageData = [
       alto: "https://res.cloudinary.com/dfmck30un/video/upload/v1698527131/he_will_supply__harmonies/he_will_supply_alt_sfeczp.mp3",
       tenor:
         "https://res.cloudinary.com/dfmck30un/video/upload/v1698527130/he_will_supply__harmonies/he_will_supply_tenor_jh6g7e.mp3",
+    },
+    original: {
+      youtube: "https://www.youtube.com/embed/GInruCmHiKc?si=68SxNIhA04I5i09o",
+      spotify:
+        "https://open.spotify.com/track/1m86i4cYV8kLiCRGwqSzuI?si=6094d9fc3e4f4c99",
     },
   },
 ];

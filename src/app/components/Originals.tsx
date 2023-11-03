@@ -1,11 +1,20 @@
 import pageData from "../../database";
-import SongCard from "./SongCard";
+import OriginalCard from "./OriginalCard";
 export default function Originals() {
   console.debug("vippe pagedata", pageData.length);
   console.log("vippe hejhej");
   pageData.forEach((d) => console.log("vippehjeh"));
   return (
     <>
+      {pageData.map((d) => {
+        return (
+          <OriginalCard
+            title={d.title}
+            artist={d.artist}
+            original={d.original}
+          />
+        );
+      })}
       {/* <h2>Wade in the water - Spirituals</h2>
       <iframe
         src="https://www.youtube.com/embed/fxZ4H-gq_lc?si=eTTf-oY9YTI12Zqx"
