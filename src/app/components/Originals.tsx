@@ -15,6 +15,7 @@ export default function Originals() {
       {pageData.map((d) => {
         return (
           <OriginalCard
+            key={d.id}
             title={d.title}
             artist={d.artist}
             original={d.original}

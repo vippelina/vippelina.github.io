@@ -1,4 +1,5 @@
 type pageDataT = {
+  id: number;
   title: string;
   artist: string;
   harmonies: {
@@ -14,6 +15,7 @@ type pageDataT = {
 };
 const pageData: pageDataT[] = [
   {
+    id: 1,
     title: "Håll mitt hjärta",
     artist: "Björn Skifs",
     harmonies: {
@@ -31,6 +33,7 @@ const pageData: pageDataT[] = [
     },
   },
   {
+    id: 2,
     title: "Stand Still",
     artist: "The walls group",
     harmonies: {
@@ -48,6 +51,7 @@ const pageData: pageDataT[] = [
     },
   },
   {
+    id: 3,
     title: "He will supply",
     artist: "Kirk Franklin",
     harmonies: {

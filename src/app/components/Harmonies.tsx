@@ -6,7 +6,12 @@ export default function Harmonies() {
     <>
       {pageData.map((d) => {
         return (
-          <SongCard title={d.title} artist={d.artist} harmonies={d.harmonies} />
+          <SongCard
+            key={d.id}
+            title={d.title}
+            artist={d.artist}
+            harmonies={d.harmonies}
+          />
         );
       })}
       {/* <h1>Stämmor vippes kör</h1>
