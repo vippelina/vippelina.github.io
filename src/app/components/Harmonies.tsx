@@ -1,8 +1,15 @@
 import * as React from "react";
+import pageData from "../../database";
+import SongCard from "./SongCard";
 export default function Harmonies() {
   return (
     <>
-      <h1>Stämmor vippes kör</h1>
+      {pageData.map((d) => {
+        return (
+          <SongCard title={d.title} artist={d.artist} harmonies={d.harmonies} />
+        );
+      })}
+      {/* <h1>Stämmor vippes kör</h1>
       <h2>Håll mitt hjärta</h2>
       <h3>Sopran</h3>
       <audio
@@ -51,7 +58,7 @@ export default function Harmonies() {
       <audio
         controls
         src="https://res.cloudinary.com/dfmck30un/video/upload/v1698527126/stand_still__harmonies/stand_still_tenor_yputmm.mp3"
-      ></audio>
+      ></audio> */}
     </>
   );
 }

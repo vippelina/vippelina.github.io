@@ -1,7 +1,12 @@
+import pageData from "../../database";
+import SongCard from "./SongCard";
 export default function Originals() {
+  console.debug("vippe pagedata", pageData.length);
+  console.log("vippe hejhej");
+  pageData.forEach((d) => console.log("vippehjeh"));
   return (
     <>
-      <h2>Wade in the water - Spirituals</h2>
+      {/* <h2>Wade in the water - Spirituals</h2>
       <iframe
         src="https://www.youtube.com/embed/fxZ4H-gq_lc?si=eTTf-oY9YTI12Zqx"
         title="YouTube video player"
@@ -24,7 +29,7 @@ export default function Originals() {
         src="https://www.youtube.com/embed/GInruCmHiKc?si=rG1F10wcCq0Wytpr"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
+      ></iframe> */}
     </>
   );
 }
