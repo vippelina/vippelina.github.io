@@ -6,6 +6,12 @@ export default function Originals() {
   pageData.forEach((d) => console.log("vippehjeh"));
   return (
     <>
+      <h2>Wade in the water - Spirituals</h2>
+      <iframe
+        src="https://www.youtube.com/embed/fxZ4H-gq_lc?si=eTTf-oY9YTI12Zqx"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      ></iframe>
       {pageData.map((d) => {
         return (
           <OriginalCard
