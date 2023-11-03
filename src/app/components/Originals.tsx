@@ -1,6 +1,12 @@
 export default function Originals() {
   return (
     <>
+      <h2>Wade in the water - Spirituals</h2>
+      <iframe
+        src="https://www.youtube.com/embed/fxZ4H-gq_lc?si=eTTf-oY9YTI12Zqx"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      ></iframe>
       <h2>Håll mitt hjärta - Björn Skifs</h2>
       <iframe
         src="https://www.youtube.com/embed/Ya9n4tr3PDU?si=9J7c2KnFxNLA5Ikn"
