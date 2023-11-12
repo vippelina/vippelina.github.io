@@ -4,7 +4,7 @@ import SongCard from "./SongCard";
 export default function Harmonies() {
   return (
     <>
-      {pageData.reverse().map((d) => {
+      {[...pageData].reverse().map((d) => {
         return (
           <SongCard
             key={d.id}

@@ -3,7 +3,7 @@ import OriginalCard from "./OriginalCard";
 export default function Originals() {
   return (
     <>
-      {pageData.map((d) => {
+      {[...pageData].reverse().map((d) => {
         return (
           <OriginalCard
             key={d.id}
