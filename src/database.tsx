@@ -135,6 +135,34 @@ const pageData: pageDataT[] = [
         "https://open.spotify.com/track/1xcC0GKNgEWDjWxawt29Nl?si=1bc5b08a18c0447b",
     },
   },
+  {
+    id: 5,
+    title: "Trust Me",
+    artist: "Richard Smallwood",
+    harmonies: [
+      {
+        type: "All",
+        url: "https://res.cloudinary.com/dfmck30un/video/upload/v1701856120/trust_me__harmonies/trust_me__all.mp3",
+      },
+      {
+        type: "Soprano",
+        url: "https://res.cloudinary.com/dfmck30un/video/upload/v1701855482/trust_me__harmonies/trust_me__sopran_c59uvs.mp3",
+      },
+      {
+        type: "Alto",
+        url: "https://res.cloudinary.com/dfmck30un/video/upload/v1701855482/trust_me__harmonies/trust_me__alt_t3etcr.mp3",
+      },
+      {
+        type: "Tenor",
+        url: "https://res.cloudinary.com/dfmck30un/video/upload/v1701855483/trust_me__harmonies/trust_me__tenor_nvxugt.mp3",
+      },
+    ],
+    original: {
+      youtube: "https://www.youtube.com/embed/4D9cCUBdi_g?si=vuGB39-GdPaz4wNA",
+      spotify:
+        "https://open.spotify.com/track/7aXT2kg321TUEJ4gpCDSJL?si=1cc1499953954365",
+    },
+  },
 ];
 
 export default pageData;
