@@ -4,7 +4,7 @@ import { audioDatas, AudioDataT, PopulatedHarmonyT } from "./mumma/database";
 const audioData = audioDatas[0];
 
 export const generatePopulatedAudioData = async (): Promise<
-  AudioDataT<PopulatedHarmonyT>
+  AudioDataT<PopulatedHarmonyT, AudioContext>
 > => {
   const AudioContext =
     window.AudioContext || (window as any).webkitAudioContext;
