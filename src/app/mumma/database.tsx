@@ -1,56 +1,49 @@
 import { UUID, randomUUID } from "crypto";
 
-export interface RawAudioDataT {
+export interface BaseHarmonyT {
   src: String;
+  title: String;
+  type: "background" | "soprano" | "alto" | "tenor";
+}
+
+export interface PopulatedHarmonyT extends BaseHarmonyT {
   audioBuffer: AudioBuffer;
   gainNode: GainNode;
 }
 
-export interface HarmonyT {
-  type: "soprano" | "alto" | "tenor" | "background";
-  data: RawAudioDataT;
-}
-
-export interface PopulatedAudioDataT {
+export interface AudioDataT<harmonyT, audioContextT> {
   id: Number;
   name: String;
   artist: String;
-  harmonies: HarmonyT[];
-  audioContext: AudioContext;
+  harmonies: harmonyT[];
+  audioContext: audioContextT;
 }
 
-export type BaseAudioDataT = Omit<
-  PopulatedAudioDataT,
-  "harmonies" | "audioContext"
-> & {
-  harmonies: (Omit<HarmonyT, "data"> & {
-    data: Omit<RawAudioDataT, "audioBuffer" | "gainNode">;
-  })[];
-};
-
-export const baseAudioDatas: BaseAudioDataT[] = [
+export const audioDatas: AudioDataT<BaseHarmonyT>[] = [
   {
     id: 1,
     name: "Stand Still",
     artist: "The Walls Group",
     harmonies: [
       {
+        src: "https://res.cloudinary.com/dfmck30un/video/upload/v1729451987/mumma/alpha_background.mp3",
+        type: "background",
+        title: "Background",
+      },
+      {
+        src: "https://res.cloudinary.com/dfmck30un/video/upload/v1729451851/mumma/alpha_soprano.mp3",
         type: "soprano",
-        data: {
-          src: "https://res.cloudinary.com/dfmck30un/video/upload/v1698527126/stand_still__harmonies/stand_still_sopran_khsghh.mp3",
-        },
+        title: "Soprano",
       },
       {
+        src: "https://res.cloudinary.com/dfmck30un/video/upload/v1729451851/mumma/alpha_alto.mp3",
         type: "alto",
-        data: {
-          src: "https://res.cloudinary.com/dfmck30un/video/upload/v1698527125/stand_still__harmonies/stand_still_alt_dtuavw.mp3",
-        },
+        title: "Alto",
       },
       {
+        src: "https://res.cloudinary.com/dfmck30un/video/upload/v1729451851/mumma/alpha_tenor.mp3",
         type: "tenor",
-        data: {
-          src: "https://res.cloudinary.com/dfmck30un/video/upload/v1698527126/stand_still__harmonies/stand_still_tenor_yputmm.mp3",
-        },
+        title: "Tenor",
       },
     ],
   },
