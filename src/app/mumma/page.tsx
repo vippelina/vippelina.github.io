@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { pageData, pageDataT } from "../../database";
-
 import { generatePopulatedAudioData } from "../audioUtils";
 import { PopulatedHarmonyT, AudioDataT, BaseHarmonyT } from "./database";
 
@@ -84,13 +82,14 @@ export default function Mumma() {
   }, [isLoading, setIsLoading]);
 
   const play = useCallback(() => {
-    if (!populatedAudioDataRef.current) {
-      throw new Error(
+    const currentPopulatedAudio = populatedAudioDataRef.current;
+    if (!currentPopulatedAudio || !currentPopulatedAudio.audioContext) {
+      return new Error(
         "Audio has not yet been loaded but also play should not have been available"
       );
     }
-    const audioData = populatedAudioDataRef.current;
-    const { audioContext, harmonies } = audioData;
+
+    const { audioContext, harmonies } = currentPopulatedAudio;
     const timeToStart = audioContext.currentTime;
     harmonies.forEach((harmony) => {
       const sourceNode = audioContext.createBufferSource();
