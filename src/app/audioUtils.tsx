@@ -1,7 +1,12 @@
 "use client";
-import { audioDatas, AudioDataT, PopulatedHarmonyT } from "./mumma/database";
+import {
+  audioDatas,
+  AudioDataT,
+  BaseHarmonyT,
+  PopulatedHarmonyT,
+} from "./mumma/database";
 
-const audioData = audioDatas[0];
+const audioData: AudioDataT<BaseHarmonyT, undefined> = audioDatas[0];
 
 export const generatePopulatedAudioData = async (): Promise<
   AudioDataT<PopulatedHarmonyT, AudioContext>
