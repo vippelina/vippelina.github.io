@@ -1,18 +1,60 @@
-export type harmoniesT = {
-  type: string;
-  url: string;
-}[];
+import { UUID, randomUUID } from "crypto";
 
-export type pageDataT = {
-  id: number;
-  title: string;
-  artist: string;
-  harmonies: harmoniesT;
-  original: {
-    youtube: string;
-    spotify: string;
-  };
+export interface RawAudioDataT {
+  src: String;
+  audioBuffer: AudioBuffer;
+  gainNode: GainNode;
+}
+
+export interface HarmonyT {
+  type: "soprano" | "alto" | "tenor" | "background";
+  data: RawAudioDataT;
+}
+
+export interface PopulatedAudioDataT {
+  id: Number;
+  name: String;
+  artist: String;
+  harmonies: HarmonyT[];
+  audioContext: AudioContext;
+}
+
+export type BaseAudioDataT = Omit<
+  PopulatedAudioDataT,
+  "harmonies" | "audioContext"
+> & {
+  harmonies: (Omit<HarmonyT, "data"> & {
+    data: Omit<RawAudioDataT, "audioBuffer" | "gainNode">;
+  })[];
 };
+
+export const baseAudioDatas: BaseAudioDataT[] = [
+  {
+    id: 1,
+    name: "Stand Still",
+    artist: "The Walls Group",
+    harmonies: [
+      {
+        type: "soprano",
+        data: {
+          src: "https://res.cloudinary.com/dfmck30un/video/upload/v1698527126/stand_still__harmonies/stand_still_sopran_khsghh.mp3",
+        },
+      },
+      {
+        type: "alto",
+        data: {
+          src: "https://res.cloudinary.com/dfmck30un/video/upload/v1698527125/stand_still__harmonies/stand_still_alt_dtuavw.mp3",
+        },
+      },
+      {
+        type: "tenor",
+        data: {
+          src: "https://res.cloudinary.com/dfmck30un/video/upload/v1698527126/stand_still__harmonies/stand_still_tenor_yputmm.mp3",
+        },
+      },
+    ],
+  },
+];
 
 export const pageData: pageDataT[] = [
   {
@@ -164,5 +206,3 @@ export const pageData: pageDataT[] = [
     },
   },
 ];
-
-export default pageData;
